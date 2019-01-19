@@ -7,3 +7,12 @@ function! zyt#str#match#StartWith(string, substring)
         return 0
     endif
 endfunction
+
+function! zyt#str#match#StartWithAnyone(string, list)
+    for l:l in a:list
+        if zyt#str#match#StartWith(a:string, l:l)
+            return 1
+        endif
+    endfor
+    return 0
+endfunction
